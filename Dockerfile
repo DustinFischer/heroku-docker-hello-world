@@ -31,4 +31,4 @@ RUN pip install -r requirements.txt
 #Expose the required port
 EXPOSE $PORT
 
-USER app
+#USER app

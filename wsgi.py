@@ -13,5 +13,5 @@ load_dotenv(os.path.join(basedir, os.getenv('DOT_ENV', '.env')))
 app = create_app(os.getenv('FLASK_CONFIG', 'dev'))
 
 if __name__ == '__main__':
-    _port = int(os.environ.get('PORT', 5000))
-    app.run(host='0.0.0.0', port=_port)
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)

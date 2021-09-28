@@ -5,13 +5,13 @@ services:
     image: postgres:13
     environment:
       POSTGRES_PASSWORD: 'postgres'
-    volumes:
-      - pg-data:/var/lib/postgresql/db-data
+#    volumes:
+#      - pg-data:/var/lib/postgresql/db-data
   web:
     build: .
     ports:
-      - "5000:${PORT}"
-    command: echo "Hello World from Docker Compose!!"
+      - "5000:5000"
+    command: gunicorn wsgi:app --bind 0.0.0.0:$PORT
     depends_on:
       - db
     environment:

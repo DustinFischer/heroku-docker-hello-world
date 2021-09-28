@@ -1,0 +1,25 @@
+.DS_Store
+*~
+
+# Python bytecode
+*.pyc
+*.pyo
+__pycache__
+
+# distutils / setuptools
+*.egg-info/
+.eggs/
+
+# NPM/Yarn packages
+node_modules
+
+# local env
+.env
+
+# Virtaul env
+venv/
+
+# Other
+.idea/
+.cache/
+.python-version

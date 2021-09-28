@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_PASSWORD: 'postgres'
+    volumes:
+      - pg-data:/var/lib/postgresql/db-data
+  web:
+    build: .
+    ports:
+      - "5000:${PORT}"
+    command: echo "Hello World from Docker Compose!!"
+    depends_on:
+      - db
+    environment:
+      DB_HOST: 'db'
+      DB_USER: 'postgres'
+      DB_PASSWORD: 'postgres'
+
+    working_dir: /code
+#    volumes:
+#    - .:/code
+#    - venv:/venv:delegated
+
+#volumes:
+#  pg-data:
+#  venv:

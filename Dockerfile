@@ -28,7 +28,7 @@ WORKDIR /code
 # Pip install server libs
 RUN pip install -r requirements.txt
 
-#Expose the required port
+#Expose the required port, Heroku dynamically assigns
 EXPOSE $PORT
 
 #USER app
